@@ -1,0 +1,139 @@
+page-home {
+  .scroll-content {
+    background-color: #fafafa !important;
+    padding: 14px;
+  }
+
+  .search-bar {
+    &.item {
+      background: color($colors, primary);
+    }
+    .avatar {
+      box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.25);
+      border: solid 2px #ffffff;
+      border-radius: 50%;
+    }
+  }
+  .search {
+    pointer-events: none;
+    border-radius: 7px;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.25);
+    background-color: #ffffff;
+  }
+
+  .categories {
+
+    .categorySlider {
+      height: 160px;
+      white-space: nowrap !important;
+    }
+
+    .category-box {
+      display: inline-flex !important;
+      .category {
+        margin-right: 10px;
+        .image {
+          width: 123px !important;
+          height: 123px !important;
+          img {
+            width: 100%;
+          }
+          padding: 10px;
+          border-radius: 8px;
+          box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.1);
+          background-color: #ffffff;
+        }
+        .title {
+          margin-top: 6px;
+          margin-left: 5px;
+          font-size: 10pt;
+          font-weight: 500;
+          text-align: left;
+          color: #000000;
+        }
+      }
+    }
+  }
+
+  .ads {
+    margin: 20px 0px;
+    .title {
+      font-size: 8pt;
+      color: #707070;
+      margin-left: 20px;
+    }
+
+    * img {
+      max-height: 180px;
+      margin: auto;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+}
+
+.home-modal {
+  .modal-wrapper {
+    height: 310px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    .scroll-content {
+      overflow: hidden !important;
+    }
+  }
+}
+
+.posts {
+  margin-top: 25px;
+  .item {
+    &.item-block .item-inner {
+      padding-right: 0px;
+    }
+    align-items: baseline;
+    ion-thumbnail {
+      &[item-right],
+      &[item-end] {
+        margin-right: 0px !important;
+      }
+      img {
+        border-radius: 8px;
+        object-fit: cover;
+      }
+    }
+  }
+  .title {
+    &,
+    * {
+      font-size: 12pt;
+      font-weight: 500;
+      text-align: left;
+    }
+  }
+  .excerpt {
+    &,
+    * {
+      font-size: 8pt !important;
+      font-weight: 500;
+      text-align: left;
+      color: #818181;
+    }
+  }
+  .footer {
+    display: flex;
+    align-items: center;
+    font-size: 6pt;
+    margin-top: 14px;
+    img {
+      width: 24px;
+      height: 8px;
+      margin-right: 6px;
+    }
+    .bullet {
+      width: 1px;
+      height: 1px;
+      margin: 0px 2px;
+      border-radius: 50%;
+      background-color: #707070;
+    }
+  }
+}

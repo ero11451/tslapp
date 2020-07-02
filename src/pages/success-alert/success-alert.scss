@@ -1,0 +1,44 @@
+page-success-alert {
+  .scroll-content {
+    background: transparent !important;
+    overflow: hidden;
+  }
+  .content{
+    border-radius: 50% !important;
+  }
+  .success-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    // width: 100%;
+    .check-box {
+      border-radius: 50%;
+      background: white !important;
+      width: 100px;
+      height: 100px;
+    }
+    img {
+      width: 100%;
+    }
+  }
+}
+.success-modal {
+  ion-backdrop {
+    visibility: visible !important;
+    z-index: 0;
+  }
+
+  .modal-wrapper {
+    margin: auto;
+    border-radius: 50% !important;
+    position: absolute;
+    height: 110px;
+    width: 110px;
+    bottom: 50% !important;
+    top: 50%;
+    left: 0;
+    right: 0;
+  }
+}

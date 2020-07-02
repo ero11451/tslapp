@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-navbar>
+      <ion-title>Feedback</ion-title>
+    </ion-navbar>
+    <ion-buttons end>
+      <button (click)="sendFeedback()" ion-button icon-only>
+        <ion-icon name="send"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div class="from">
+    From: {{user?.email}}
+  </div>
+  <ion-item no-padding>
+    <ion-input [(ngModel)]="feedback" type="text" placeholder="Write your feedback" ></ion-input>
+  </ion-item>
+  <ion-item class="log" no-padding no-lines>
+    <ion-label>Include screenshot and log</ion-label>
+    <ion-checkbox checked="true" ></ion-checkbox>
+  </ion-item>
+</ion-content>

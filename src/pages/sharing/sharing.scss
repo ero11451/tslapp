@@ -1,0 +1,64 @@
+page-sharing {
+  .border {
+    &::after {
+      display: block;
+    }
+  }
+
+  .no-border {
+    &::after {
+      display: none;
+    }
+  }
+
+  .header-btn {
+    margin-right: 14px;
+    width: 64px;
+    height: 29px;
+  }
+
+  .texts {
+    .text-input {
+      margin: 13px 0px !important;
+    }
+    .title {
+      .text-input {
+        font-size: 21pt;
+      }
+    }
+  }
+
+  .media {
+    margin-top: 40px;
+    .note {
+      text-transform: uppercase;
+      font-size: 7pt;
+      font-weight: 500;
+      color: #6f6f6f;
+    }
+    .action {
+      border-radius: 7px;
+      border: 1px solid #e0e0e0;
+      align-items: center;
+      display: flex;
+      padding: 14px 0px;
+      margin: 10px 0px;
+      .icon {
+        color: color($colors, primary);
+        margin: 0px 14px 0px 18px;
+      }
+    }
+
+    .selected-media {
+      .action {
+        img {
+          margin: auto;
+          max-width: 100%;
+          width: 100%;
+          height:  300px;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}

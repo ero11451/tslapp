@@ -1,0 +1,116 @@
+page-live {
+  .scroll-content {
+    background-color: #fafafa !important;
+  }
+
+  .heading {
+    color: color($colors, primary);
+  }
+
+  .video-section {
+    background: #fff;
+
+    .title {
+      font-size: 10pt;
+    }
+
+    .status {
+      text-transform: uppercase;
+      font-size: 10pt;
+      color: #f7262c;
+    }
+
+    .video-box {
+      border-radius: 17px;
+      margin: 17px;
+    }
+  }
+
+  .events-schedule {
+    margin: 16px;
+    .no-event {
+      font-size: 10pt;
+      margin-top: 5px;
+      text-align: left;
+      color: #555555;
+    }
+
+    .event {
+      margin: 10px 0px;
+
+      .overview {
+        background: #fff;
+        border-radius: 7px;
+        border: 1px solid #e0e0e0;
+        align-items: center;
+        display: flex;
+        padding: 14px 0px;
+        justify-content: space-between;
+
+        .icon {
+          color: color($colors, primary);
+          margin: 0px 11px 0px 18px;
+        }
+
+        .title {
+          font-size: 10pt;
+          text-align: left;
+          color: #555555;
+        }
+
+        .time {
+          font-size: 10pt;
+          margin-right: 18px;
+          color: #818181;
+        }
+      }
+
+      .description {
+        background: rgb(247, 247, 247);
+        border-bottom-left-radius: 7px;
+        border-bottom-right-radius: 7px;
+        border: none;
+        border-top: none;
+        padding: 14px 40px;
+        transition: max-height 0.2s;
+        height: auto !important;
+        max-height: 300px;
+        color: #636363;
+
+        &.collapsed {
+          max-height: 0;
+          overflow: hidden;
+          padding: 0 18px;
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+  .posts {
+    margin: 16px;
+    .head {
+      font-size: 10pt;
+      text-align: left;
+      color: #555555;
+      margin-left: 16px;
+    }
+  }
+
+    .banner-section {
+      margin: 20px 16px;
+
+      .title {
+        font-size: 8pt;
+        color: #707070;
+        margin-left: 20px;
+      }
+
+      * img {
+        max-height: 200px;
+        margin: auto;
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+}

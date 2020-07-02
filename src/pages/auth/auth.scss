@@ -1,0 +1,39 @@
+page-auth {
+  .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    height: 100%;
+    overflow: scroll;
+  }
+
+  .login {
+    text-align: center;
+    .google-btn {
+      margin: auto;
+      margin-top: 64px;
+      width: 294px;
+      height: 43px;
+      border-radius: 7px;
+      border: #0bce86 solid 1px;
+      background-color: #ffffff;
+      .btn-text {
+        width: 101px;
+        height: 19px;
+        font-size: 15px;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .signup {
+    text-align: center;
+    .info {
+      text-align: left;
+      font-size: 15px;
+      font-weight: 500;
+      margin-top: 15px;
+    }
+  }
+}

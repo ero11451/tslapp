@@ -1,0 +1,25 @@
+page-share-modal {
+  .options {
+    z-index: 999;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    .note {
+      margin: auto;
+      font-size: 9px;
+      color: #6f6f6f;
+    }
+    .actions {
+      display: flex;
+      justify-content: center;
+      margin-top: 18px;
+      button {
+        &:not(:last-child) {
+          margin-right: 18px;
+        }
+        width: 156px;
+        height: 34px;
+      }
+    }
+  }
+}

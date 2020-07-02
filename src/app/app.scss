@@ -1,0 +1,180 @@
+// http://ionicframework.com/docs/theming/
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+* {
+  &:not(ion-icon) {
+    font-family: "Quicksand", sans-serif !important;
+  }
+  font-weight: 600 !important;
+  ::-webkit-scrollbar {
+      display: none;
+    }
+}
+
+[ion-button] {
+  border-radius: 6px;
+  box-shadow: none;
+  text-transform: capitalize;
+  font-weight: 600 !important;
+}
+
+[flat] {
+  * {
+    box-shadow: none !important;
+  }
+}
+
+/* Custom card*/
+ion-card {
+  border-radius: 8px !important;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.08) !important;
+  background-color: #ffffff !important;
+}
+
+/*custom Ionicon icon*/
+ion-icon {
+  &[class*="custom-"] {
+    mask-size: contain;
+    mask-position: 50% 50%;
+    mask-repeat: no-repeat;
+    background: currentColor;
+    width: 1em;
+    height: 1em;
+  }
+
+  &[class*="custom-home"] {
+    mask-image: url("../assets/icon/home.svg");
+  }
+
+  &[class*="custom-sharing"] {
+    mask-image: url("../assets/icon/sharing.svg");
+  }
+
+  &[class*="custom-live"] {
+    mask-image: url("../assets/icon/live.svg");
+  }
+
+  &[class*="custom-assistant"] {
+    mask-image: url("../assets/icon/assistant.svg");
+  }
+  &[class*="custom-settings"] {
+    mask-image: url("../assets/icon/settings.svg");
+  }
+}
+
+//custom input styling
+[input] {
+  &[inset] .item:last-child {
+    border-bottom-width: initial;
+    border-bottom-right-radius: initial;
+    border-bottom-left-radius: initial;
+  }
+  ion-list-header {
+    color: color($colors, dark);
+  }
+  * {
+    font-weight: 500;
+  }
+  .item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner,
+  .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
+    border-bottom: none;
+    box-shadow: none;
+  }
+
+  .item.item-input.item-input-has-focus .item-inner,
+  .item.item-input.input-has-focus .item-inner {
+    box-shadow: none !important;
+  }
+
+  .item.item-input.ng-invalid.ng-touched:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
+    box-shadow: none !important;
+  }
+
+  &.list .item-input.item-input-has-focus,
+  &.list .item-input.input-has-focus {
+    border-bottom-color: #2bc089 !important;
+    &:last-child {
+      box-shadow: inset 0 -1px 0 0 #2bc089 !important;
+    }
+  }
+
+  &.list .item-input.ng-invalid.ng-touched:not(.input-has-focus):not(.item-input-has-focus) {
+    border-color: color($colors, danger) !important;
+    &:last-child {
+      box-shadow: inset 0 -1px 0 0 color($colors, danger) !important;
+    }
+  }
+
+  &.list .item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) {
+    border-color: color($colors, primary) !important;
+    &:last-child {
+      box-shadow: inset 0 -1px 0 0 color($colors, primary) !important;
+    }
+  }
+  ion-item {
+    border: 1.5px solid #dadada !important;
+    box-sizing: border-box !important;
+    border-radius: 5px !important;
+    margin-top: 20px;
+  }
+
+  //iOS specific style
+  .list-ios .item-block .item-inner {
+    border-bottom: none !important;
+  }
+  .item-ios.item-block .item-inner {
+    border-bottom: none !important;
+  }
+}
+
+.list .item-input:last-child {
+  border-bottom: none;
+}
+
+// custom modal
+.action-modal {
+  ion-backdrop {
+    visibility: visible !important;
+    z-index: 0;
+  }
+
+  .modal-wrapper {
+    position: absolute;
+    height: 150px;
+    width: 100%;
+    bottom: 0px !important;
+    top: unset;
+    left: 0;
+    right: 0;
+  }
+}
+
+//search bar
+
+.searchbar-wp .searchbar-input-container {
+  border: none;
+  border-radius: 7px;
+  padding: 5px;
+}
+.searchbar-wp .searchbar-search-icon {
+  top: 10px;
+}
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

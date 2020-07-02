@@ -1,0 +1,21 @@
+page-ireport-details {
+  .image {
+    &.video{
+      background: black;
+    }
+    border-radius: 7px;
+    border: 1px solid #e0e0e0;
+    align-items: center;
+    display: flex;
+    img {
+      margin: auto;
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+    video {
+      margin: auto;
+      width: 100%;
+    }
+  }
+}

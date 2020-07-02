@@ -1,0 +1,13 @@
+{
+  "name": "TslNigeiraTv",
+  "short_name": "TslTV",
+  "start_url": "index.html",
+  "display": "standalone",
+  "icons": [{
+    "src": "assets/imgs/tsltv.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }],
+  "background_color": "#0bce86",
+  "theme_color": "#0bce86"
+}

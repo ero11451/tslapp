@@ -1,0 +1,91 @@
+<ion-header no-border>
+
+  <ion-navbar color="white">
+    <ion-title>
+      <span class="heading">Live Streaming</span></ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingText="Pull to refresh"></ion-refresher-content>
+  </ion-refresher>
+  <div class="loading" *ngIf="loading">
+    <ion-spinner color="primary"></ion-spinner>
+  </div>
+  <div *ngIf="showBanner" class="banner-section">
+    <p padding-horizontal>Up Next</p>
+    <ion-card>
+      <img [src]="event.nextEventBanner" alt="up next on tsltv">
+    </ion-card>
+  </div>
+  <div *ngIf="showVideo" class="video-section">
+    <ion-item no-lines>
+      <div class="title">{{event?.title | titlecase}}</div>
+      <div item-end class="status" *ngIf="isLive">live now</div>
+    </ion-item>
+    <div class="video-box">
+      <iframe width="100%" modestbranding="1" height="250" [src]="link" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+    </div>
+  </div>
+  <div class="events-schedule" padding>
+    <div class="title">Airing Next</div>
+    <div class="no-event" *ngIf="events && !events?.length">No event is airing next</div>
+    <div tappable (click)="switchView(i)" class="event" *ngFor="let event of events; let i = index">
+      <div class="overview">
+        <div class="title">
+          <ion-icon *ngIf="!event?.expand" class="icon" name="add"></ion-icon>
+          <ion-icon *ngIf="event?.expand" class="icon" name="remove"></ion-icon>
+          {{event?.title | titlecase}}
+        </div>
+        <div class="time">
+          {{event?.time | amCalendar}}
+        </div>
+      </div>
+      <div [ngClass]="event.expand ? 'expanded': 'collapsed'" class="description">
+        {{event?.description}}
+      </div>
+    </div>
+  </div>
+  <div class="posts">
+    <div class="head">Recent Videos</div>
+    <ion-card tappable (click)="openVideo(message.snippet.resourceId.videoId)" tappable *ngFor="let message of messages">
+      <ion-card-content no-margin>
+        <ion-item text-wrap no-lines no-padding no-margin>
+          <div class="title" [innerHTML]="message.snippet.title | titlecase">
+          </div>
+          <span class="excerpt" [innerHTML]="(message?.snippet?.description.length>100)? (message?.snippet?.description | slice:0:100)+'...' : message?.snippet?.description">
+          </span>
+          <div class="footer">
+            <img src="assets/imgs/tsltv.png" alt="tsltv logo">
+            <span>TslNigeria Tv News</span>
+            <div class="bullet"></div>
+            <span>{{message.snippet.publishedAt| amTimeAgo}}</span>
+          </div>
+          <ion-thumbnail item-right>
+            <img src="{{message.snippet.thumbnails.medium.url}}" alt="{{message.snippet.title }}">
+          </ion-thumbnail>
+        </ion-item>
+
+      </ion-card-content>
+
+    </ion-card>
+  </div>
+  <!-- <ion-list text-wrap class="recentVideo">
+    <div class="title">Recent Videos</div>
+    <ion-item *ngFor="let message of messages" (click)="openVideo(message.snippet.resourceId.videoId)">
+      <ion-thumbnail item-right>
+        <img src="{{message.snippet.thumbnails.medium.url}}">
+      </ion-thumbnail>
+      <h2>{{message.snippet.title}}</h2>
+      <p>
+        <ion-icon name="time"></ion-icon>
+        {{message.snippet.publishedAt | date}}
+      </p>
+    </ion-item>
+
+  </ion-list> -->
+</ion-content>

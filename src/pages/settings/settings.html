@@ -1,0 +1,42 @@
+<ion-header>
+
+  <ion-navbar color="white">
+    <ion-title>Settings</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list no-lines>
+    <div class="heading">Alerts</div>
+    <ion-item no-padding>
+      <ion-label>Notifications</ion-label>
+      <ion-toggle [(ngModel)]="notification" (ionChange)="switchNotification(notification)"></ion-toggle>
+    </ion-item>
+    <div class="heading">General</div>
+    <button ion-item no-padding>
+      <h2>Preferred language & region</h2>
+      <p>English (Nigeria)</p>
+    </button>
+    <div class="line"></div>
+    <div class="heading">Privacy</div>
+    <ion-item no-padding>
+      <ion-label>Share Usage Statistics <br>
+        <ion-note class="note">To improve on the services offered</ion-note>
+      </ion-label>
+      <ion-toggle checked="false"></ion-toggle>
+    </ion-item>
+    <div class="heading">About</div>
+    <ion-item no-padding>
+      <h2>TSLNIGERIA TV</h2>
+      <p>Best of News Experience where ever you are!</p>
+    </ion-item>
+    <div class="line"></div>
+    <div class="heading">Version</div>
+    <ion-item no-padding>
+      <p>{{version}}</p>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

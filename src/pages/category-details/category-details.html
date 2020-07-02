@@ -1,0 +1,64 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>{{categoryName | titlecase}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div class="loading" *ngIf="loading">
+    <ion-spinner color="primary"></ion-spinner>
+  </div>
+  <div class="posts" *ngIf="!loading && posts?.length || ireports?.length">
+    <ion-card tappable *ngFor="let post of posts" (click)="_helpers.openPost(post.link)">
+      <ion-card-content no-margin>
+        <ion-item text-wrap no-lines no-padding no-margin>
+          <div class="title" [innerHTML]="post?.title?.rendered | titlecase">
+          </div>
+          <span class="excerpt" [innerHTML]="(post?.excerpt?.rendered.length>148)? (post?.excerpt?.rendered | slice:0:148)+'...' : post?.excerpt?.rendered">
+
+          </span>
+          <div class="footer">
+            <img src="assets/imgs/tsltv.png" alt="tsltv logo">
+            <span>TslNigeria Tv News</span>
+            <div class="bullet"></div>
+            <span>{{post.modified| amTimeAgo}}</span>
+          </div>
+          <ion-thumbnail item-right>
+            <img src="{{post?.better_featured_image?.source_url}}" alt="{{post?.better_featured_image?.alt_text}}">
+          </ion-thumbnail>
+        </ion-item>
+
+      </ion-card-content>
+
+    </ion-card>
+    <ion-card tappable *ngFor="let post of ireports" (click)="openIreport(post)">
+      <ion-card-content no-margin>
+        <ion-item text-wrap no-lines no-padding no-margin>
+          <div class="title" [innerHTML]="post?.title | titlecase">
+          </div>
+          <span class="excerpt" [innerHTML]="(post?.body.length>148)? (post?.body | slice:0:148)+'...' : post?.body">
+
+          </span>
+          <div class="footer">
+            <img src="assets/imgs/tsltv.png" alt="tsltv logo">
+            <span>TslNigeria Tv iReport</span>
+            <div class="bullet"></div>
+            <span>{{post.createdAt| amTimeAgo}}</span>
+          </div>
+          <ion-thumbnail item-right>
+            <img *ngIf="post.type == 'image'" src="{{baseUrl}}/{{post?.filePath}}" alt="{{post?.better_featured_image?.alt_text}}">
+          </ion-thumbnail>
+        </ion-item>
+
+      </ion-card-content>
+
+    </ion-card>
+  </div>
+  <div class="no-content" *ngIf="!loading && type === 'ireport' && !ireports?.length">
+    <img src="assets/imgs/welcome1.svg" alt="no post in category">
+    <ion-note>No post in this category at the moment. <br>Please check back later.</ion-note>
+  </div>
+</ion-content>

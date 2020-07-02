@@ -1,0 +1,33 @@
+<ion-header no-border>
+
+  <ion-navbar color="white">
+    <ion-searchbar #searchBar [(ngModel)]="keyword" (ionInput)="search()" class="search" mode="wp" flat placeholder="Search 'Latest News'"></ion-searchbar>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+  <div class="loading" *ngIf="loading">
+    <ion-spinner color="primary"></ion-spinner>
+  </div>
+  <div class="no-result" *ngIf="!loading && keyword?.length >= 2 && posts?.length <= 0">
+    <p>No result found for "{{keyword}}"</p>
+  </div>
+  <ion-list *ngIf="!loading && keyword?.length >= 2" class="results" no-lines text-wrap no-padding>
+    <button ion-item *ngFor="let post of posts; let i = index;" (click)="_helpers.openPost(post.link)">
+      <ion-thumbnail *ngIf="i <= 2" item-start class="result-image">
+        <img [src]="post?.better_featured_image?.source_url || 'assets/imgs/search.svg'" [alt]="post?.better_featured_image?.alt_text">
+      </ion-thumbnail>
+      <ion-thumbnail *ngIf="i >= 3" item-start class="result-image search-icon">
+        <img src="assets/imgs/search.svg" alt="">
+      </ion-thumbnail>
+      <div class="title" [innerHTML]="post.title.rendered | titlecase">
+
+      </div>
+      <div class="keyword" *ngIf="i <= 2" >
+        Trending story: “{{keyword}}”
+      </div>
+    </button>
+  </ion-list>
+</ion-content>

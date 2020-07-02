@@ -1,0 +1,41 @@
+<ion-content padding>
+  <div class="main" >
+    <div class="login" *ngIf="section == 'login'">
+      <img src="assets/imgs/login.svg" alt="">
+      <div class="action">
+        <button (click)="loginWithGoogle()" class="google-btn" ion-item text-capitalize>
+          <div class="btn-text">
+            Continue with Google
+          </div>
+          <img item-end src="assets/imgs/google.svg" alt="google logo">
+        </button>
+
+      </div>
+    </div>
+    <div class="signup" *ngIf="section == 'signup'">
+      <img src="assets/imgs/signup.svg" alt="image of man with a laptop">
+      <form [formGroup]="signupForm">
+        <ion-list inset input>
+          <ion-card-header no-margin no-padding>
+            <div class="info">
+              Please fill in missing details
+            </div>
+          </ion-card-header>
+          <ion-item>
+            <ion-input formControlName="firstName" type="text" placeholder="First Name"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input type="text" formControlName="lastName" placeholder="Last Name"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input type="email" formControlName="email" placeholder="Email"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input type="tel" #phoneField formControlName="phoneNumber" placeholder="Phone Number"></ion-input>
+          </ion-item>
+        </ion-list>
+        <button [disabled]="!signupForm.valid" ion-button (click)="signup()">Continue</button>
+      </form>
+    </div>
+  </div>
+</ion-content>

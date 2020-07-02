@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Request Callback
+    </ion-title>
+    <ion-buttons start mode="ios">
+      <button margin-horizontal ion-button icon-only (click)="dismiss()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button [disabled]="!callReqForm.valid" (click)="sendCallbackReq()" ion-button icon-only>
+        <ion-icon name="send"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+  <form [formGroup]="callReqForm">
+    <ion-item>
+      <ion-input type="text" formControlName="name" placeholder="Full Name"></ion-input>
+    </ion-item>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-select placeholder="Country" interface="action-sheet">
+            <ion-option selected  value="nigeria">Nigeria</ion-option>
+
+          </ion-select>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+          <ion-input type="tel" formControlName="phoneNumber" placeholder="Phone"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-item>
+      <ion-input type="text" formControlName="body" placeholder="Describe your issue (optional)"></ion-input>
+    </ion-item>
+  </form>
+ <div class="requesting-user">
+    <div class="label">Requesting as</div>
+    <div class="email">{{user?.email}}</div>
+  </div>
+</ion-content>
+<ion-footer no-border>
+  <ion-toolbar>
+    <div  class="info">
+      Some <span ion-text color="primary"> account and system</span>
+      info will be sent to TSLNIGERIA. We’ll use the
+      Info you give us to address technical issues and improve our services,
+      subject to our <span ion-text color="primary">Privacy Policy</span> and <span ion-text color="primary">Terms of Service</span>
+    </div>
+  </ion-toolbar>
+</ion-footer>

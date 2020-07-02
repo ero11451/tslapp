@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>248545437866-tid6mrinsplut5oqf7ngi73d0iqnmjgd.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.248545437866-tid6mrinsplut5oqf7ngi73d0iqnmjgd</string>
+	<key>API_KEY</key>
+	<string>AIzaSyD69nUWIhw18NAaJR-s0XAJ_uDq0RaNMbY</string>
+	<key>GCM_SENDER_ID</key>
+	<string>248545437866</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>tv.tslnigeria.app</string>
+	<key>PROJECT_ID</key>
+	<string>tsltv-1368</string>
+	<key>STORAGE_BUCKET</key>
+	<string>tsltv-1368.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:248545437866:ios:7b4c3fb986032b5a</string>
+	<key>DATABASE_URL</key>
+	<string>https://tsltv-1368.firebaseio.com</string>
+</dict>
+</plist>

@@ -1,0 +1,44 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Assistant</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div class="quickmail" padding-horizontal>
+    <div class="hint">
+      How can we help you?
+    </div>
+    <ion-item no-padding no-margin>
+      <ion-input [(ngModel)]="feedback" type="text" placeholder="Describe your issue"></ion-input>
+      <button (click)="sendFeedback()" item-right icon-only ion-button clear>
+        <ion-icon item-end color="primary" name="arrow-forward"></ion-icon>
+      </button>
+    </ion-item>
+  </div>
+  <div class="line"></div>
+
+  <div class="contact" padding-horizontal>
+    <ion-item no-lines no-padding>
+      <div class="title">Contact Us</div>
+      <button ion-button clear item-end class="action">Hide hour</button>
+    </ion-item>
+    <div class="phone-action">
+      <img (click)="openRequestCallBack()" tappable src="assets/imgs/phone.svg" alt="phone image">
+      <div class="hint">Phone</div>
+      <div class="time">Available 24/7</div>
+    </div>
+  </div>
+  <div class="line"></div>
+  <div class="feedback" padding-horizontal>
+    <button (click)="goToFeedback()" ion-item no-lines no-padding>
+      <div item-start>
+        <img src="assets/imgs/feedback.svg" alt="feedback icon">
+      </div>
+      Send feedback
+    </button>
+  </div>
+</ion-content>

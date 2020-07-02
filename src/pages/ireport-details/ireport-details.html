@@ -1,0 +1,17 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>{{post?.title | titlecase}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div [innerText]="post.body"></div>
+  <br>
+  <div class="image" [ngClass]="post.type == 'video' ? 'video':''">
+    <img imageViewer="{{baseUrl}}/{{post?.filePath}}" *ngIf="post.type == 'image'" src="{{baseUrl}}/{{post?.filePath}}">
+    <video *ngIf="post.type == 'video'" src="{{baseUrl}}/{{post?.filePath}}" controls height="300"></video>
+  </div>
+</ion-content>

@@ -1,0 +1,53 @@
+<ion-header [ngClass]="showBorder ? 'border': 'no-border'">
+  <ion-toolbar color="white">
+    <button [disabled]="!ireportForm.valid || !checkFileAvilability()" (click)="confirmUpload()" class="header-btn"
+      float-right ion-button>
+      next
+    </button>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content (ionScroll)="getScroll($event)" padding #content>
+  <form [formGroup]="ireportForm">
+
+    <div class="texts">
+      <ion-item no-lines no-padding>
+        <ion-textarea formControlName="title" rows="2" class="title" placeholder="Title"></ion-textarea>
+      </ion-item>
+      <ion-item no-lines no-padding>
+        <ion-textarea formControlName="post" rows="10" placeholder="Post">
+
+        </ion-textarea>
+      </ion-item>
+
+    </div>
+  </form>
+  <div class="media">
+    <div class="note">Add Photo/Video</div>
+    <div class="selected-media">
+      <div class="action" *ngIf="video" tappable (click)="playVideo()">
+        <ion-icon name="play" class="icon"></ion-icon>
+        Play Selected Video
+      </div>
+
+      <div class="action image" *ngIf="image" tappable>
+        <img [src]="image" [imageViewer]="image" class="icon">
+      </div>
+    </div>
+
+    <div (click)="takePhoto()" tappable class="action">
+      <ion-icon class="icon" name="add"></ion-icon>
+      Take Photo
+    </div>
+    <div (click)="getMediaFromFile()" tappable class="action">
+      <ion-icon class="icon" name="add"></ion-icon>
+      Choose Image
+    </div>
+    <div (click)="getMediaFromFile(true)" tappable class="action">
+      <ion-icon class="icon" name="add"></ion-icon>
+      Choose Video
+    </div>
+  </div>
+
+</ion-content>

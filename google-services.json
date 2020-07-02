@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "248545437866",
+    "firebase_url": "https://tsltv-1368.firebaseio.com",
+    "project_id": "tsltv-1368",
+    "storage_bucket": "tsltv-1368.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:248545437866:android:7b4c3fb986032b5a",
+        "android_client_info": {
+          "package_name": "tv.tslnigeria.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "248545437866-mmt3bmfrbqokuv618o1pc05k2i1981d6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "tv.tslnigeria.app",
+            "certificate_hash": "8b43a78088ab1614c3d907ec57dee230ec5ec54f"
+          }
+        },
+        {
+          "client_id": "248545437866-ahrmv8qapfbf6d1qbdols2hdnd831e88.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "tv.tslnigeria.app",
+            "certificate_hash": "d343e8ce4b4e66e38bbaecf67660fbf7d87348f6"
+          }
+        },
+        {
+          "client_id": "248545437866-k37373upfgt036bu0423ekaft7gkc7nh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBx8wExGyo6tpLIWjjuw_sqGbRcU9uR65w"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "248545437866-k37373upfgt036bu0423ekaft7gkc7nh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,56 @@
+page-account-modal {
+  .content{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  .profile {
+    ion-icon {
+      color: #4260a5;
+      font-size: 19pt;
+    }
+    h2 {
+      font-size: 12pt;
+    }
+    p {
+      color: #646464 !important;
+      font-size: 9pt;
+    }
+  }
+
+  .line {
+    width: 100%;
+    border: 1px solid rgba(112, 112, 112, 0.06);
+    margin: 27.5px 0px;
+    &:last-child {
+      margin-bottom: 15px;
+    }
+  }
+
+  .action {
+    color: #262626 !important;
+    font-size: 12pt;
+    ion-icon {
+      font-size: 12pt;
+      min-height: 9px;
+      color: #4b4b4b;
+    }
+  }
+
+  .terms {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    button {
+      font-size: 8pt;
+      color: #262626;
+    }
+    .bullet {
+      border-radius: 50%;
+      width: 3px;
+      height: 3px;
+      object-fit: contain;
+      background-color: #4b4b4b;
+    }
+  }
+}

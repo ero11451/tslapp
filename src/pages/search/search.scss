@@ -1,0 +1,59 @@
+page-search {
+  .search {
+    border-bottom: solid 1px rgba(112, 112, 112, 0.22);
+  }
+
+  .button-wp:hover:not(.disable-hover) {
+    border: unset !important;
+  }
+
+  .results {
+    .item {
+      align-items: baseline;
+    }
+    .input-wrapper,
+    .item-inner {
+      height: fit-content !important;
+    }
+    .title {
+      font-size: 10pt;
+      text-align: left;
+    }
+    .keyword {
+      font-size: 7pt;
+      text-align: left;
+      color: #848484;
+    }
+    .result-image {
+      max-width: 30px !important ;
+      min-width: 30px !important ;
+      min-height: 0px !important;
+      &.search-icon {
+        // color: #b2c1bc;
+        img {
+          margin: auto;
+          width: 60%;
+          margin-top: 10px;
+        }
+      }
+      img {
+        border-radius: 2px;
+        height: unset;
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+
+
+  .no-result{
+    text-align: center;
+    p{
+      color: #a3a3a3;
+    }
+  }
+  //change color for back button icon
+.back-button-icon {
+  color: #a3a3a3;
+}
+}

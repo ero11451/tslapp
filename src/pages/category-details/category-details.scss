@@ -1,0 +1,21 @@
+page-category-details {
+  .scroll-content {
+    background-color: #fafafa;
+    padding: 14px;
+  }
+
+  .no-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    ion-note {
+      margin-top: 20px;
+    }
+    img {
+      width: 80%;
+    }
+  }
+}

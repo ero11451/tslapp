@@ -1,0 +1,49 @@
+
+<ion-content padding>
+  <div class="slider">
+
+    <ion-slides #slider pager>
+      <ion-slide>
+        <img src="assets/imgs/welcome1.svg" alt="welcome image 1">
+        <div class="title">
+          Access news on the go
+        </div>
+        <div class="details">
+          Quickly view your recommended news and stay up to date on
+          Tslnigeria tv analysis. Your curated newsfeed, our reports are
+          now easily accessible from our mobile app.
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <img class="img-2" src="assets/imgs/welcome2.svg" alt="">
+        <div class="title">
+          Easily share insights
+        </div>
+        <div class="details">
+        Share relevant articles, reports and analysis with friends and
+        colleagues. It’s never been easier to exchange insights or connect
+        with peers over the latest deal or latest trend.
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <img class="img-3" src="assets/imgs/welcome3.svg" alt="">
+        <div class="title">
+          Get real-time updates
+        </div>
+        <div class="details">
+        Be the first to know when a Latest news publishes
+        thanks to mobile alerts. By opting-in to push notifications,
+        you get the real-time updates you need to stay ahead.
+        </div>
+      </ion-slide>
+
+    </ion-slides>
+  </div>
+  <div class="actions">
+    <div class="slider-controls">
+      <button (click)="slider.slidePrev()"  ion-button outline text-capitalize>Previous</button>
+      <button (click)="slider.isEnd() ? goToAuth() : slider.slideNext()" ion-button text-capitalize>Next</button>
+    </div>
+    <button ion-button clear (click)="goToAuth()" color="dark" text-capitalize> Skip</button>
+  </div>
+</ion-content>

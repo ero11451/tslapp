@@ -1,0 +1,33 @@
+page-request-callback-modal {
+  .scroll-content {
+    padding-top: 51px !important;
+  }
+  .item {
+    padding-left: 0px;
+  }
+  ion-select {
+    max-width: 100%;
+  }
+
+  .requesting-user {
+    margin-top: 37px;
+    color: #626262;
+    .label {
+      font-size: 6pt;
+      margin-bottom: 5px;
+    }
+    .email {
+      font-size: 8pt;
+    }
+  }
+
+  .info {
+    background-color: #fafafa;
+    font-size: 7pt;
+    padding-top: 15px;
+    padding-left: 20px;
+    padding-right: 43px;
+    padding-bottom: 20px;
+    color: #626262;
+  }
+}

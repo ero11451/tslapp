@@ -1,0 +1,23 @@
+page-settings {
+  //change color for back button icon
+  .back-button-icon {
+    color: #a3a3a3;
+  }
+
+  .line {
+    width: 100%;
+    border: 1px solid rgba(112, 112, 112, 0.25);
+    margin: 20.5px 0px;
+  }
+
+  .heading {
+    font-size: 8pt;
+    color: color($colors, primary);
+  }
+  ion-item {
+    margin-bottom: 20px !important;
+    .note {
+      font-size: 9pt;
+    }
+  }
+}

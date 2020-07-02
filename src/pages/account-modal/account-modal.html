@@ -1,0 +1,27 @@
+<ion-content padding>
+  <ion-list no-lines>
+    <ion-item class="profile">
+      <ion-avatar item-left>
+        <img [src]="user?.imageUrl || 'assets/imgs/avatar.png'">
+      </ion-avatar>
+      <h2>{{user.displayName | titlecase}}</h2>
+      <p>{{user.email | lowercase}}</p>
+      <ion-icon name="ios-contact" item-end></ion-icon>
+    </ion-item>
+    <div class="line"></div>
+    <button (click)="openShareOptions()" class="action" ion-item>
+      <ion-icon item-start name="share"></ion-icon>
+      Share this app
+    </button>
+    <button (click)="goToSettingsPage()" class="action" ion-item>
+      <ion-icon item-start name="custom-settings"></ion-icon>
+      Settings
+    </button>
+    <div class="line"></div>
+  </ion-list>
+  <div class="terms" justify-content-center>
+    <button ion-button clear>Privacy policy</button>
+    <div class="bullet"></div>
+    <button ion-button clear>Terms of service</button>
+  </div>
+</ion-content>

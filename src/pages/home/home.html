@@ -1,0 +1,87 @@
+<ion-header no-border>
+
+  <ion-toolbar color="primary">
+    <ion-item class="search-bar" no-lines>
+      <ion-avatar (click)="openAccountOptions()" tappable item-left class="avatar">
+        <img src="{{user?.imageUrl || 'assets/imgs/avatar.png'}}">
+      </ion-avatar>
+      <span tappable (click)="goToSearch()">
+        <ion-searchbar class="search" mode="wp" flat placeholder="Search 'Latest News'"></ion-searchbar>
+      </span>
+    </ion-item>
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content #content>
+  <ion-refresher  (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingText="Pull to refresh"></ion-refresher-content>
+  </ion-refresher>
+  <div class="categories">
+    <ion-scroll [scrollX]="true" #categorySlider class="categorySlider">
+      <div class="category-box">
+        <div (click)="openCategoryDetails(category.id,category.title)" tappable *ngFor="let category of categories"
+          class="category">
+          <div class="image">
+            <img [src]="category.image" alt="">
+          </div>
+          <div class="title" text-capitalize>
+            {{category.title}}
+          </div>
+        </div>
+        <div (click)="openCategoryDetails('ireport','iReport')" tappable class="category">
+          <div class="image">
+            <img src="assets/imgs/categories/ireport.svg" alt="">
+          </div>
+          <div class="title">
+            iReport
+          </div>
+        </div>
+
+      </div>
+    </ion-scroll>
+  </div>
+  <div *ngIf="adSlides && adSlides.length" class="ads">
+    <div class="title">Sponsored Ads</div>
+    <ion-slides #adSlider [autoplay]="5000" [loop]="adSlides.length > 1">
+      <ion-slide tappable *ngFor="let slide of adSlides" (click)="openPost(slide.link)">
+        <ion-card  >
+          <img [src]="slide.imageUrl" alt="sponsored ad">
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+  </div>
+
+  <div class="posts">
+    <div class="loading" *ngIf="loading">
+      <ion-spinner color="primary"></ion-spinner>
+    </div>
+    <ion-card tappable *ngFor="let post of posts" (click)="_helpers.openPost(post.link)">
+      <ion-card-content no-margin>
+        <ion-item text-wrap no-lines no-padding no-margin>
+          <div class="title" [innerHTML]="post?.title?.rendered | titlecase">
+          </div>
+          <span class="excerpt" [innerHTML]="(post?.excerpt?.rendered.length>148)? (post?.excerpt?.rendered | slice:0:148)+'...' : post?.excerpt?.rendered">
+          </span>
+          <div class="footer">
+            <img src="assets/imgs/tsltv.png" alt="tsltv logo">
+            <span>TslNigeria Tv News</span>
+            <div class="bullet"></div>
+            <span>{{post.modified| amTimeAgo}}</span>
+          </div>
+          <ion-thumbnail item-right>
+            <img src="{{post?.better_featured_image?.source_url}}" alt="{{post?.better_featured_image?.alt_text}}">
+          </ion-thumbnail>
+        </ion-item>
+
+      </ion-card-content>
+
+    </ion-card>
+  </div>
+
+  <ion-infinite-scroll [enabled]="paging?.totalPages" (ionInfinite)="loadMore($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+</ion-content>

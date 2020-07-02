@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="Check_Icon" width="48.988" height="48.988" data-name="Check Icon" viewBox="0 0 48.988 48.988">
+    <defs>
+        <style>
+            .cls-1{fill:none}.cls-2{fill:#0bce86}
+        </style>
+    </defs>
+    <path id="Bounds" d="M0 0h48.988v48.988H0z" class="cls-1"/>
+    <path id="Icon" d="M14.831 27.236l-8.573-8.573L3.4 21.521l11.431 11.431L39.325 8.458 36.467 5.6z" class="cls-2" transform="translate(3.54 5.831)"/>
+</svg>
